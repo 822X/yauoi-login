@@ -25,7 +25,8 @@ function genComponents () {
   })
 }
 function buildComponents(name) {
-  let file = path.join(__dirname, `../src/components/${name}/index`)
+  // let file = path.join(__dirname, `../src/components/${name}/index`)
+  let file = path.join(__dirname, `../src/components/index`)
   let _config = require('./webpack.base.conf')
   _config.entry = {}
   _config.entry[name] = file

@@ -6,7 +6,8 @@
   :prefix="prefix"></login>
 </template>
 <script>
-import Login from '../components/Login/index.vue'
+// import Login from '../components/Login/index.vue'
+import Login from '../components/index.js'
   export default {
     components: {
       Login
