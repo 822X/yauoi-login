@@ -85,7 +85,16 @@
   const _hostInfo = host.split('.')
   // 得到该结构：["cms-saas-dev", "tinfinite", "com:8080"]
   const TYPE = _hostInfo[0].split('-')[0]
-  const ENV =  _hostInfo[0].split('-')[2] ? _hostInfo[0].split('-')[2] : 'pro'
+  let domainArray = _hostInfo[0].split('-')
+  let domainLen =  _hostInfo[0].split('-').length
+  let ENV = 'pro'
+  if (domainLen === 1) {
+    ENV = 'pro'
+  } else if (domainLen === 2 && TYPE !== 'cms' ) {
+    ENV = domainArray[1]
+  } else if (domainLen === 3) {
+    ENV = domainArray[2]
+  }
   let deviceInfo = TYPE === 'cms' ? 'cms' : ''
 
   export default {
